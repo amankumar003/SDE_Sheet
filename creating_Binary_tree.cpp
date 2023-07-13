@@ -15,11 +15,25 @@ this->right = NULL;
 };
 
 node* buildtrees(){
-
+cout<<"Enter the data :"<<endl;
+  int data;
+  cin>>data;
+  root = new node(data);
+  if(data==-1){
+return NULL:
+  }
+cout<<"enter the data to be inserted in left node"<<endl;
+root->left = buildtrees(root->left);
+cout<<"enter the data for right node";
+root->right = buildtrees(root->right);
+return root;
+  
 }
+
+
 int main(){
 node* root = NULL;
-root = buildtrees();
+root = buildtrees(root);
 
 return 0 ;
 }
