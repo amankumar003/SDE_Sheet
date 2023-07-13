@@ -1,3 +1,4 @@
+//compoile time polymorphism
 #include<bits/stdc++.h>
 using namespace std;
 class B{
