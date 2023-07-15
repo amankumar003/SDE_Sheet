@@ -11,7 +11,38 @@ class node{
         this ->next=NULL;
         this->data = data;
     }
+//destructor
+    ~node(){
+        int value = this->data;
+        //freeing memory
+        if(this->next!= NULL){
+            delete next;
+            this->next = NULL;
+        }
+    }
 };
+void deletenode(int pos, node* &head){
+    if(pos==1){
+        node* temp = head;
+        head = head ->next;
+        //free meemory
+        temp->next =NULL;
+        delete temp;
+    }
+    else{
+        //deleting for the middle and last node
+        node* curr = head;
+        node* prev = NULL;
+        int cnt =1;
+        if( cnt <= pos){
+            prev = curr;
+            curr = curr->next;
+            cnt++; 
+        }
+        curr->next= NULL;
+        prev->next = curr->next;
+    }
+}
 void insertatHead(node* &head, int d){
     //create new data for the coming data d
     node* temp = new node(d);
