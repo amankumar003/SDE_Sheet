@@ -85,7 +85,7 @@ void insertatposition(node* &tail, node* & head, int data, int position){
 
     //inserrt at tail
     if(temp->next == NULL){
-        insertattail(tail, data);
+        insertattail(tail, head, data);
         return;
     }
     //creating a node for the upcoming data;
@@ -104,11 +104,11 @@ node* head= node1;
 node* tail = node1;
 print(head);
 
-cout<< getlength(head)<<endl;
+// cout<< getlength(head)<<endl;
 
 insertathead(head,25);
 print( head);   
-insertattail(tail, 4);
+insertattail(tail,head, 4);
 insertatposition(tail, head, 45, 3);
 print(head);
 return 0;
